@@ -12,7 +12,7 @@ tiendaCTl.mostrar = (req, res) => {
 
 tiendaCTl.mandar = async (req, res) => {
     const id = req.user.idRestaurant
-    const { idRestaurant, restaurantName, location, imageRestaurant, tipoComida } = req.body
+    const { idRestaurante, restaurantName, location, imageRestaurant, tipoComida } = req.body
     const newSend = {
         restaurantName,
         location,
@@ -25,13 +25,13 @@ tiendaCTl.mandar = async (req, res) => {
 }
 
 tiendaCTl.lista = async (req, res) => {
-    const lista = await sql.query('select * from restaurantes')
+    const lista = await sql.query('select * from publicaciones')
     res.render('tienda/lista', { lista })
 }
 
 tiendaCTl.traer = async (req, res) => {
     const ids = req.params.id
-    const lista = await sql.query('select * from restaurantes where idRestaurante = ?', [ids])
+    const lista = await sql.query('select * from publicaciones where idRestaurante = ?', [ids])
     res.render('tienda/editar', {lista})
 }
 
@@ -49,9 +49,21 @@ tiendaCTl.actualizar = async (req, res) => {
     await orm.restaurantes.findOne({ where: {idRestaurante: ids } })
         .then(actualizar => {
             actualizar.update(newSend)
-            req.flash('success', 'Actualizado con extio')
+            req.flash('success', 'Actualizado con exito')
         })
-        res.redirect('/tienda/lista/' );
+        res.redirect('/tienda/lista/');
+}
+
+tiendaCTl.eliminar = async (req, res) => {
+    const ids = req.params.id;
+    await orm.restaurantes.destroy({where:{idRestaurante : ids}})
+    .then(()=>{
+        req.flash("error", "Eliminado Correctamente")
+    }).catch((err)=>{
+        console.log(err);
+        req.flash("error","No se pudo eliminar el registro");
+    }); 
+    return res.redirect("/tienda/lista");  
 }
 
 module.exports = tiendaCTl;

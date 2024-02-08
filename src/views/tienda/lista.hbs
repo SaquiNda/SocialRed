@@ -9,24 +9,23 @@
 </head>
 <body>
     <div id="sidebar">
+        <img src="/img/logo4.jpg" id="logoizquierdo" width="100%">
         <h1>Bienvenido</h1><br>
-        <h2>Samuel</h2>
         <ul>
             <li>
                 <button id="sidebar-button">
-                    <img src="/img/iconocasa.png" alt="restaurante">Mi restaurante
+                    <img src="/img/iconocasa.png" alt="restaurante">Inicio
                 </button>
             </li>
         </ul>
     </div>
     <div id="main-content">
 
-        <h1>Mis restaurantes</h1>
+        <h1>Mis Publicaciones</h1>
 
         <div id="user-info">
             <img src="/img/usuarioicono.png">
             <h2>Samuel </h2>
-            <p>Restaurante Administrador</p>
         </div>
 
         <div id="card-container">
@@ -34,15 +33,16 @@
             {{#each lista}}
             <div id="card1">
                 <div id="card-image">
-                    <img src="/img/logo1.jpg" alt="DigitalWaiter" height="60px">
+                    <img src="/img/logo4.jpg" alt="DigitalWaiter" height="60px">
                 </div>
                 {{restaurantName}}
                 <button id="edit-btn"><a href="/tienda/editar/{{idRestaurante}}">Editar</a></button>
-                <button id="manage-btn"><a href="/dashboard">Gestionar</a></button>
+                <button id="manage-btn"><a href="">Gestionar</a></button>
+                <button id="delete-btn"><a href="/tienda/eliminar/{{idRestaurante}}">Eliminar</a></button>
             </div> 
             {{/each}}
             <div id="card2">
-                <h3>Agregar<br> restaurante</h3>
+                <h3>Agregar<br> Publicacion</h3>
                 <button><a href="/agregar"><img src="/img/plus.png"></a></button>
             </div>
             

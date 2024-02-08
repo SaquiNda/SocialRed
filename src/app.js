@@ -33,7 +33,7 @@ app.use(myconnection(mysql, {
     user: 'root',
     password: '',
     port: 3306,
-    database: 'petpocket'
+    database: 'petpocketv3'
 }))
 
 const sessionStore = new MySQLStore(options);

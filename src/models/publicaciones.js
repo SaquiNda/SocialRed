@@ -1,5 +1,5 @@
-const tienda = (sequelize,type)=>{
-    return sequelize.define('restaurantes', {
+const publicaciones = (sequelize,type)=>{
+    return sequelize.define('publicaciones', {
         idRestaurante: {
             type: type.INTEGER,
             primaryKey: true,
@@ -25,4 +25,4 @@ const tienda = (sequelize,type)=>{
     })
 
 }
-module.exports = tienda
+module.exports = publicaciones

@@ -21,7 +21,7 @@ sequelize.sync({ force: false })
 		console.log("tablas sincronizadas");
 	});
 
-	const tiendaModel = require('../models/tienda') 
+	const publicacionModel = require('../models/publicaciones') 
 	const dueñoModel = require('../models/usuario') 
 	const clienteModel = require('../models/users'); 
 	//const menuModel = require('../models/menu')
@@ -29,11 +29,10 @@ sequelize.sync({ force: false })
 	const sopasModel = require('../models/sopas')
 	const bebidasModel	= require('../models/bebidas')
 	const entradaModel = require('../models/entradas')
-
 	
 	//sincronia
 	
-	const restaurantes =  tiendaModel(sequelize, Sequelize)
+	const restaurantes =  publicacionModel(sequelize, Sequelize)
 	const dueño = dueñoModel(sequelize, Sequelize)
 	const cliente = clienteModel(sequelize, Sequelize)
 	//const menu = menuModel(sequelize, Sequelize)
