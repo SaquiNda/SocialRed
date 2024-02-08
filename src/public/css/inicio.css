@@ -5,7 +5,7 @@ body {
     width: 100%;
     height: 100%;
     min-height: 100vh;
-    background-image: url('../img/panfondo.jpeg');
+    background-image: url('../img/');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -41,7 +41,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #F5F5DC;
+    color: #000000;
     text-decoration: none;
     font-size: 20px;
     font-weight: 500;
@@ -56,7 +56,7 @@ nav ul li a:active {
 }
 
 nav #menu-btn i {
-    color: white;
+    color: rgb(206, 194, 194);
     font-size: 22px;
     cursor: pointer;
     display: none;
@@ -67,7 +67,7 @@ nav #menu-btn i {
 }
 
 h1 {
-    color: #F5F5DC;
+    color: #000000;
     font-size: 88px;
     font-family: 'Montserrat', sans-serif;
     align-items: left;
@@ -87,7 +87,7 @@ button {
 }
 
 button a {
-    color: #F5F5DC;
+    color: #000000;
     font-weight: bold;
 }
 
